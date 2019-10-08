@@ -1,3 +1,66 @@
 // Place all the styles related to the api/sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.signup {
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid black;
+  
+}
+
+.signup label {
+  color: #6B7C93;
+  font-size: 14px;
+}
+
+.signup h2 {
+  font-weight: bold;
+  font-size: 24px;
+
+}
+
+nav {
+  background: #461A42;
+  height: 72px;
+  position: fixed;
+  width: 100%;
+  margin: auto 0;
+  top: 0;
+  left: 0;
+  right: 0;
+
+}
+
+nav .signup {
+  background-color: #00C985;
+  display :inline-block;
+  width: 108px;
+  height: 44px;
+  border-radius: 8px;
+  vertical-align: middle;
+  margin: 0 24px 0 16px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  font-family: 'QuickSand', 'OpenSans', sans-serif, Helvetica, Arial;
+    font-size: 16px;
+    line-height: 44px;
+  position: absolute;
+  top: 15px;
+  left: 1080px;
+  font-weight: bold;
+ 
+}
+
+nav .login {
+  width: 64px;
+    height: 30px;
+    cursor: pointer;
+    line-height: 30px;
+    background-color: rgba(0,0,0,0.2);
+    transition: all 0.2s ease-out;
+    color: white;
+      font-family: 'QuickSand', 'OpenSans', sans-serif, Helvetica, Arial;
+  text-decoration: none;
+}
