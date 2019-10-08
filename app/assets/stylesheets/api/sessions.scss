@@ -54,6 +54,10 @@ nav .signup {
 }
 
 nav .login {
+  border-radius: 4px;
+  position: absolute;
+  text-align: center;
+  display: inline-block;
   width: 64px;
     height: 30px;
     cursor: pointer;
@@ -63,4 +67,50 @@ nav .login {
     color: white;
       font-family: 'QuickSand', 'OpenSans', sans-serif, Helvetica, Arial;
   text-decoration: none;
+  left: 1000px;
+  top: 20px;
 }
+
+nav .login:hover {
+  -webkit-filter: brightness(70%);
+}
+
+.loginForm {
+  width: 400px;
+  height: 500px;
+  border: 1px solid black;
+}
+
+.loginForm h2 {
+  display: block;
+  text-align: center;
+  color: #393A68;
+  font-size: 14px;
+  position: relative;
+}
+
+.loginForm .submit {
+  width: 300px;
+  height: 50px;
+  background-color: #7D72EC;
+  color: white;
+  font-family: OpenSans, sans-serif, Helvetica, Arial;
+  position: absolute;
+  top: 470px;
+  left: 55px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.loginForm label {
+  color: #393A68;
+  display: flex;
+
+}
+
+.loginForm input {
+  height: 30px;
+  width: 80%;
+  padding: 10px;
+}
+
