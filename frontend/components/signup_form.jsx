@@ -56,7 +56,7 @@ class SignupForm extends React.Component {
 
   render() {
     const emailForm = (
-      <form onSubmit={this.handleSubmit}>
+      <form className="email-form" onSubmit={this.handleSubmit}>
         <label>Email
           <input type="text" onChange={this.update("email")}/>
         </label>

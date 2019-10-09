@@ -32,7 +32,7 @@ class LoginForm extends React.Component {
           </label>
           <label>Password
             
-            <input type="password" onChange={this.update("passowrd")} />
+            <input type="password" onChange={this.update("password")} />
           </label>
           
           <input className="submit"type="submit" value="LOG IN"/>
