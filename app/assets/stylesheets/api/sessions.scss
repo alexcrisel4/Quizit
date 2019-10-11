@@ -2,119 +2,228 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.signup {
-  background-color: white;
-  border-radius: 5px;
-  border: 1px solid black;
-  
-}
-
-.signup label {
-  color: #6B7C93;
-  font-size: 14px;
-}
-
-.signup h2 {
-  font-weight: bold;
-  font-size: 24px;
-
-}
-
-nav {
-  background: #461A42;
-  height: 72px;
-  position: fixed;
-  width: 100%;
+.login-signup {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: #461A42;
+  height: 72px; 
   margin: auto 0;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.4);
 }
 
-nav .signup {
-  background-color: #00C985;
-  display :inline-block;
-  width: 108px;
-  height: 44px;
-  border-radius: 8px;
-  vertical-align: middle;
-  margin: 0 24px 0 16px;
-  color: white;
-  text-decoration: none;
-  text-align: center;
-  font-family: 'QuickSand', 'OpenSans', sans-serif, Helvetica, Arial;
-    font-size: 16px;
-    line-height: 44px;
-  position: absolute;
-  top: 15px;
-  left: 1080px;
-  font-weight: bold;
- 
-}
-
-nav .login {
-  border-radius: 4px;
-  position: absolute;
-  text-align: center;
-  display: inline-block;
-  width: 64px;
-    height: 30px;
-    cursor: pointer;
-    line-height: 30px;
-    background-color: rgba(0,0,0,0.2);
-    transition: all 0.2s ease-out;
-    color: white;
-      font-family: 'QuickSand', 'OpenSans', sans-serif, Helvetica, Arial;
-  text-decoration: none;
-  left: 1000px;
-  top: 20px;
-}
-
-nav .login:hover {
-  -webkit-filter: brightness(70%);
-}
-
-.loginForm {
-  width: 400px;
-  height: 500px;
-  border: 1px solid black;
-}
-
-.loginForm h2 {
-  display: block;
-  text-align: center;
-  color: #393A68;
-  font-size: 14px;
-  position: relative;
-}
-
-.loginForm .submit {
-  width: 300px;
-  height: 50px;
-  background-color: #7D72EC;
-  color: white;
-  font-family: OpenSans, sans-serif, Helvetica, Arial;
-  position: absolute;
-  top: 470px;
-  left: 55px;
-  border-radius: 4px;
-  font-size: 14px;
-}
-
-.loginForm label {
-  color: #393A68;
+.nav-links {
   display: flex;
+  list-style-type: none;
+}
+
+.login-signup .nav-links .signup {
+ 
+  padding: 20px;
 
 }
 
-.loginForm input {
-  height: 30px;
-  width: 80%;
+.login-signup .nav-links .login {
+ 
   padding: 10px;
+  background-color: black;
+  height: 10px;
+  border-radius: 4px;
+  margin-top: 25px;
+  text-align: center;
+  
+
+  // height: 20px;
+}
+
+.signup-link {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  font-family: 'QuickSand', 'OpenSans', sans-serif, Helvetica, Arial;
+  background: #00C985;
+  width: 108px;
+  border-radius: 4px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 44px;
+  font-size: 16px;
+  font-weight: 700;
+  padding-left: 20;
+  text-align: center;
+} 
+.login-link {
+  display: inline-block;
+  text-decoration: none;
+  font-family: "quicksand";
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+  width: 64px;
+  height: 30px;
+  background-color: rgba(0,0,0,0.2);
+  transition: all 0.2s ease-out;
+  border-radius: 4px;
+  width: 64px;
+  height: 30px;
+  color: white;
+
+}
+.login-link:hover {
+  -webkit-filter: brightness(70%);
+}
+
+
+.forms {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  margin: auto 0;
 }
 
 .email-form {
   display: flex;
+  position: relative;
+  top: 100px;
+  flex-direction: column;
+  border: 1px solid black;
+  width: 400px;
+  border-radius: 4px;
+  background-color: white;
+  margin: auto 0;
 }
 
+ button {
+  background-color: #4285f4;
+  color: white;
+  width: 80%;
+  padding-left: 30px;
+  height: 40px;
+  border-radius: 4px
+}
+
+.email-form .next {
+  background-color: #f2f2f2;
+  width: 80%;
+  height: 40px;
+}
+
+#email {
+  width: 80%;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+}
+
+.login-form {
+  display: flex;
+  position: relative;
+  top: 100px;
+  flex-direction: column;
+  width: 400px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.login-form-container {
+  display: flex;
+  position: absolute;
+}
+
+.submit {
+   background-color: #f2f2f2;
+  width: 80%;
+  height: 40px;
+
+}
+
+.google-button {
+  background-color: #7D72EC;
+  padding: 10px;
+}
+
+body {
+  background-color: #461A42
+}
+
+.occupation-form {
+  background-color: white;
+  width: 529px;
+  border-bottom: 4px solid #dadada;
+  height: 349px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center
+}
+.occupation-container {
+  display: flex;
+  background-color: white;
+  border-radius: 4px;
+  font-family: OpenSans, sans-serif, Helvetica, Arial;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.occupation {
+  display: flex;
+  border: 1px solid #e0e0e1;
+  width: 160px;
+  height: 200px;
+  border-radius: 4px;
+}
+
+.user-signup {
+  background-color: white;
+  width: 400px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-radius: 4px;
+}
+
+.user-signup label {
+  color:#6B7C93;
+  display: block;
+}
+
+.user-submit {
+  background-color: #f2f2f2;
+  color: rgba(41,42,58,0.34);
+  width: 80%;
+  height: 40px;
+  border-radius: 4px;
+}
+
+.occupation.teacher {
+  background-image: image_url('occupations/educator.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.occupation.student {
+  background-image: image_url('occupations/learner.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+   font-size: 16px;
+  font-weight: bold;
+}
+
+.occupation.parent {
+  background-image: image_url('occupations/parent_or_guardian.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  
+  font-size: 16px;
+  font-weight: bold;
+}

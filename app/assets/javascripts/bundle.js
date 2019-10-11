@@ -298,10 +298,14 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        className: "loginForm",
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "login-form-conatiner"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        className: "login-form",
         onSubmit: this.handleSubmit
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Log in"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Email/Username", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Log in"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "google-button"
+      }, "Sign up with Google"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "-or-"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Email/Username", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         defaultValue: "johndoe@company.com",
         onChange: this.update("email")
@@ -381,13 +385,19 @@ var Navbar = function Navbar(_ref) {
   } else {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
       className: "login-signup"
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+      className: "nav-links"
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      className: "login"
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-      className: "login",
+      className: "login-link",
       to: "/login"
-    }, "Log in"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-      className: "signup",
+    }, "Log in")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      className: "signup"
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      className: "signup-link",
       to: "/signup"
-    }, "Sign up!"));
+    }, "Sign up"))));
   }
 };
 
@@ -443,7 +453,9 @@ var Sidebar = function Sidebar(_ref) {
       logout = _ref.logout;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hgroup", {
     className: "sidebar-group"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    className: "sidebar-name"
+  }, " ", currentUser.first_name + " " + currentUser.last_name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "logout-button",
     onClick: logout
   }, "Log Out"));
@@ -645,28 +657,39 @@ function (_React$Component) {
       var emailForm = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "email-form",
         onSubmit: this.handleSubmit
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Email", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Welcome to Quizitz"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Sign up with Google"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "-or-"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        HTMLfor: "email"
+      }, "Sign up with email "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        id: "email",
         type: "text",
         onChange: this.update("email")
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "next",
         type: "submit",
         value: "next"
       }));
-      var occupationForm = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      var occupationForm = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "occupation-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "I'm using Quizitz as..."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        className: "occupation-form"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "occupation teacher",
         type: "submit",
-        value: "Teacher",
+        value: "a teacher",
         onClick: this.handleOccupation("teacher")
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "occupation student",
         type: "submit",
-        value: "Student",
+        value: "a student",
         onClick: this.handleOccupation("student")
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "occupation parent",
         type: "submit",
-        value: "Parent",
+        value: "a parent",
         onClick: this.handleOccupation("parent")
-      }));
+      })));
       var userInfoForm = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Let's complete your account"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        className: "signup",
+        className: "user-signup",
         onSubmit: this.handleSubmit
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Title", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
         defaultValue: "--"
@@ -683,35 +706,57 @@ function (_React$Component) {
         value: "Miss"
       }, "Miss"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
         value: "Mx"
-      }, "Mx"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "First Name", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, "Mx"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        "for": "first-name"
+      }, "First Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        id: "first-name",
         type: "text",
         onChange: this.update("first_name")
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Last Name", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        "for": "last_name"
+      }, "Last Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        id: "last_name",
         type: "text",
         onChange: this.update("last_name")
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Password", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        "for": "password"
+      }, "Password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        id: "password",
         type: "password",
         onChange: this.update("password")
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "user-submit",
         type: "submit",
         value: "Complete Sign Up"
       })));
       var studentForm = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Let's complete your account"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        className: "signup",
+        className: "student-signup",
         onSubmit: this.handleSubmit
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Please confirm your date of birth", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        "for": "birthdate"
+      }, "Please confirm your date of birth"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        id: "birthdate",
         type: "date",
         onChange: this.update("birthdate")
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "First Name", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        "for": "student-first-name"
+      }, "First Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        "for": "student-first-name",
         type: "text",
         onChange: this.update("first_name")
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Last Name", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        "for": "student-last-name"
+      }, "Last Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        id: "student-last-name",
         type: "text",
         onChange: this.update("last_name")
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Password", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        "for": "student-password"
+      }, "Password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        id: "student-password",
         type: "password",
         onChange: this.update("password")
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "submit",
         value: "Complete Sign Up"
       })));
@@ -735,7 +780,9 @@ function (_React$Component) {
           break;
       }
 
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, activeForm);
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "forms"
+      }, activeForm);
     }
   }]);
 

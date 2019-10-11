@@ -57,26 +57,31 @@ class SignupForm extends React.Component {
   render() {
     const emailForm = (
       <form className="email-form" onSubmit={this.handleSubmit}>
-        <label>Email
-          <input type="text" onChange={this.update("email")}/>
-        </label>
-        <input type="submit" value="next"/>
+        <h2>Welcome to Quizitz</h2>
+        <button>Sign up with Google</button>
+        <div>-or-</div>
+        <label HTMLfor="email">Sign up with email </label>
+          <input id="email" type="text" onChange={this.update("email")}/>
+        <input className="next" type="submit" value="next"/>
       </form>
     )
+
     const occupationForm = (
-      
-        <form>
-          <input type="submit" value="Teacher" onClick={this.handleOccupation("teacher")}/>
-          <input type="submit" value="Student" onClick={this.handleOccupation("student")} />
-          <input type="submit" value="Parent" onClick={this.handleOccupation("parent")} />
+      <div className="occupation-container">
+        <h2>I'm using Quizitz as...</h2>
+        <form className ="occupation-form">
+        <input className="occupation teacher" type="submit" value="a teacher" onClick={this.handleOccupation("teacher")}/>
+        <input className="occupation student" type="submit" value="a student" onClick={this.handleOccupation("student")} />
+        <input className="occupation parent" type="submit" value="a parent" onClick={this.handleOccupation("parent")} />
         </form>
+      </div>
       )
 
     const userInfoForm = (
     
       <div>
         <h2>Let's complete your account</h2>
-        <form className="signup" onSubmit={this.handleSubmit}>
+        <form className="user-signup" onSubmit={this.handleSubmit}>
           <label>Title
               <select defaultValue="--">
               <option disabled value="--">--</option>
@@ -87,16 +92,13 @@ class SignupForm extends React.Component {
               <option value="Mx">Mx</option>
             </select>
           </label>
-          <label>First Name
-              <input type="text" onChange={this.update("first_name")} />
-          </label>
-          <label>Last Name
-              <input type="text" onChange={this.update("last_name")} />
-          </label>
-          <label>Password
-            <input type="password" onChange={this.update("password")} />
-          </label>
-          <input type="submit" value="Complete Sign Up" />
+          <label for="first-name">First Name</label>
+              <input id="first-name" type="text" onChange={this.update("first_name")} />
+          <label for="last_name">Last Name</label>
+              <input id="last_name" type="text" onChange={this.update("last_name")} />
+          <label for="password">Password</label>
+            <input id="password" type="password" onChange={this.update("password")} />
+          <input className="user-submit" type="submit" value="Complete Sign Up" />
         </form>
       </div>
     )
@@ -104,19 +106,15 @@ class SignupForm extends React.Component {
     const studentForm = (
       <div>
         <h2>Let's complete your account</h2>
-        <form className="signup" onSubmit={this.handleSubmit}>
-          <label>Please confirm your date of birth
-            <input type="date" onChange={this.update("birthdate")} />
-          </label>
-          <label>First Name
-              <input type="text" onChange={this.update("first_name")} />
-          </label>
-          <label>Last Name
-              <input type="text" onChange={this.update("last_name")} />
-          </label>
-          <label>Password
-            <input type="password" onChange={this.update("password")} />
-          </label>
+        <form className="student-signup" onSubmit={this.handleSubmit}>
+          <label for="birthdate">Please confirm your date of birth</label>
+            <input id="birthdate"type="date" onChange={this.update("birthdate")} />
+          <label for="student-first-name">First Name</label>
+              <input for="student-first-name" type="text" onChange={this.update("first_name")} />
+          <label for="student-last-name">Last Name</label>
+              <input id="student-last-name" type="text" onChange={this.update("last_name")} />
+          <label for="student-password">Password</label>
+            <input id="student-password" type="password" onChange={this.update("password")} />
           <input type="submit" value="Complete Sign Up" />
         </form>
       </div>
@@ -137,7 +135,7 @@ class SignupForm extends React.Component {
         break
     }
     return (
-      <div>
+      <div className="forms">
         {activeForm}
       </div>
     )

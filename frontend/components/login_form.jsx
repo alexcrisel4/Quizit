@@ -24,9 +24,11 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div>
-        <form className="loginForm" onSubmit={this.handleSubmit}>
+      <div className="login-form-conatiner">
+        <form className="login-form" onSubmit={this.handleSubmit}>
           <h2>Log in</h2>
+          <button className="google-button">Sign up with Google</button>
+          <div>-or-</div>
           <label>Email/Username
               <input type="text" defaultValue="johndoe@company.com" onChange={this.update("email")} />
           </label>

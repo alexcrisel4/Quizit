@@ -11,8 +11,10 @@ const Navbar = ({ loggedin }) => {
   } else {
     return (
       <nav className="login-signup">
-        <Link className="login" to="/login">Log in</Link>
-        <Link className="signup" to="/signup">Sign up!</Link>
+        <ul className="nav-links">
+          <li className="login" ><Link className="login-link" to="/login">Log in</Link></li>
+          <li className="signup"><Link className="signup-link" to="/signup">Sign up</Link></li>
+        </ul>
       </nav>
     )
   }
