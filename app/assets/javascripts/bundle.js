@@ -188,7 +188,9 @@ var App = function App(_ref) {
     sidebar = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_sidebar_container__WEBPACK_IMPORTED_MODULE_5__["default"], null);
   }
 
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_navbar__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "app-container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_navbar__WEBPACK_IMPORTED_MODULE_4__["default"], {
     loggedin: loggedin
   })), sidebar, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_6__["AuthRoute"], {
     path: "/login",
@@ -238,6 +240,7 @@ var mapStateToProps = function mapStateToProps(state) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -257,6 +260,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -299,24 +303,32 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "login-form-conatiner"
+        className: "login-form-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "login-form",
         onSubmit: this.handleSubmit
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Log in"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "google-button"
-      }, "Sign up with Google"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "-or-"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Email/Username", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Log in"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        "for": "login-email"
+      }, "Email/Username"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        id: "login-email",
+        className: "login-input",
         type: "text",
-        defaultValue: "johndoe@company.com",
+        placeholder: "johndoe@company.com",
         onChange: this.update("email")
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Password", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        "for": "login-password"
+      }, "Password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        id: "login-password",
+        className: "login-input",
         type: "password",
         onChange: this.update("password")
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "submit",
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "login-submit",
         type: "submit",
         value: "LOG IN"
-      })));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Don't have an account? ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/signup"
+      }, "Click Here"), " to sign up")));
     }
   }]);
 
@@ -548,6 +560,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -567,6 +580,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -657,11 +671,12 @@ function (_React$Component) {
       var emailForm = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "email-form",
         onSubmit: this.handleSubmit
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Welcome to Quizitz"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Sign up with Google"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "-or-"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Welcome to Quizitz"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         HTMLfor: "email"
       }, "Sign up with email "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         id: "email",
         type: "text",
+        placeholder: "mmcgonagal@hogwarts.com",
         onChange: this.update("email")
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "next",
@@ -670,22 +685,47 @@ function (_React$Component) {
       }));
       var occupationForm = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "occupation-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "I'm using Quizitz as..."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "occupation-form"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "occupation-title-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "occupation-title"
+      }, "I'm using Quizitz as..."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "occupation-outer-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "occupation-input-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        id: "teacher",
         className: "occupation teacher",
+        value: "",
         type: "submit",
-        value: "a teacher",
         onClick: this.handleOccupation("teacher")
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: "teacher"
+      }, "a teacher")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "occupation-input-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "occupation student",
         type: "submit",
-        value: "a student",
+        value: "",
         onClick: this.handleOccupation("student")
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: "student"
+      }, "a student")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "occupation-input-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        id: "parent",
         className: "occupation parent",
+        value: "",
         type: "submit",
-        value: "a parent",
+        onClick: this.handleOccupation("parent")
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: "parent"
+      }, "a parent")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "occupation-submit",
+        type: "submit",
+        value: "I'm not connected to a school",
         onClick: this.handleOccupation("parent")
       })));
       var userInfoForm = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Let's complete your account"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
@@ -711,12 +751,14 @@ function (_React$Component) {
       }, "First Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         id: "first-name",
         type: "text",
+        value: this.state.user.first_name,
         onChange: this.update("first_name")
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         "for": "last_name"
       }, "Last Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         id: "last_name",
         type: "text",
+        value: this.state.user.last_name,
         onChange: this.update("last_name")
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         "for": "password"
@@ -729,7 +771,9 @@ function (_React$Component) {
         type: "submit",
         value: "Complete Sign Up"
       })));
-      var studentForm = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Let's complete your account"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      var studentForm = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "student-form-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Let's complete your account"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "student-signup",
         onSubmit: this.handleSubmit
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {

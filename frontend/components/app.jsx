@@ -12,7 +12,7 @@ const App = ({ loggedin }) => {
   if(loggedin) {
     sidebar = < SidebarContainer />
   } 
-  return (<div>
+  return (<div className="app-container">
     <header>
       <Navbar loggedin ={loggedin}/>
     </header>

@@ -3,7 +3,7 @@ class Api::QuizzesController < ApplicationController
   def create 
     @quiz = Quiz.new(quiz_params)
     if @quiz.save 
-      render "api/quizzes/show"
+      render :show
     else 
       render json: @quiz.errors.full_messages, status: 422
     end
@@ -11,8 +11,12 @@ class Api::QuizzesController < ApplicationController
 
 
   def show 
-    @quiz = Quiz.find(params[:id])
-
+    @quiz = Quiz.find_by(params[:id])
+    if @quiz 
+      render :show 
+    else 
+    render json: @quiz.errors.full_messages, status: 404
+    end
   end 
 
   def index 
@@ -20,10 +24,18 @@ class Api::QuizzesController < ApplicationController
   end 
 
   def destroy 
+    @quiz = Quiz.find_by(params[:id])
+    if @quiz
+      @quiz.delete 
+      render :index
+    end
+
   end 
 
 
   def update 
+    @quiz = Quiz.find_by(params[:id])
+
   end 
 
   private 

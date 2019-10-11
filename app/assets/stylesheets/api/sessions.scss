@@ -31,13 +31,17 @@
  
   padding: 10px;
   background-color: black;
+  opacity: 0.5;
   height: 10px;
   border-radius: 4px;
   margin-top: 25px;
   text-align: center;
-  
-
-  // height: 20px;
+  transition: all 0.2s ease-out;
+  // background-color: rgba(0,0,0,0.2);
+ 
+}
+.login-signup .nav-links .login:hover {
+ -webkit-filter: brightness(70%);
 }
 
 .signup-link {
@@ -65,111 +69,198 @@
   vertical-align: middle;
   width: 64px;
   height: 30px;
-  background-color: rgba(0,0,0,0.2);
-  transition: all 0.2s ease-out;
-  border-radius: 4px;
-  width: 64px;
-  height: 30px;
   color: white;
 
 }
-.login-link:hover {
-  -webkit-filter: brightness(70%);
-}
 
-
-.forms {
-  display: flex;
-  position: absolute;
-  align-items: center;
-  justify-content: center;
-  margin: auto 0;
-}
 
 .email-form {
-  display: flex;
-  position: relative;
-  top: 100px;
+ display: flex;
   flex-direction: column;
-  border: 1px solid black;
+   margin-top: 100px;
+  justify-content: center;
   width: 400px;
-  border-radius: 4px;
+  height: 225px;
   background-color: white;
-  margin: auto 0;
+  align-items: center;
+  border-radius: 4px;
 }
 
  button {
   background-color: #4285f4;
   color: white;
   width: 80%;
-  padding-left: 30px;
+  text-align: left;
   height: 40px;
   border-radius: 4px
 }
 
 .email-form .next {
   background-color: #f2f2f2;
-  width: 80%;
+  width: 85%;
   height: 40px;
+  margin: 30px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: lightgrey;
+}
+
+.email-form h2 {
+  font-family:  sans-serif, Helvetica, Arial;
+  align-self: center;
+  font-size: 20px;
+  color: #292A3A;
+  font-weight: bold;
+}
+
+.email-form .next:hover {
+  background-color: #7D72EC;
 }
 
 #email {
   width: 80%;
   padding: 10px;
-  margin: 10px;
-  text-align: center;
+  border-radius: 4px;
+  
 }
+
+.email-form label {
+  align-self: flex-start;
+  margin-left: 30px;
+  font-size: 12px;
+  margin-bottom: 2px;
+  color: #6B7C93;
+}
+
+
 
 .login-form {
   display: flex;
-  position: relative;
-  top: 100px;
   flex-direction: column;
-  width: 400px;
-  background-color: white;
-  border-radius: 5px;
+  width: 80%;
+  margin-top: 20px;
+  height: 100%;
+}
+
+.login-input {
+  padding: 15px;
+  font-family: OpenSans, sans-serif, Helvetica, Arial;
+  border-radius: 4px;
+}
+
+.login-form h3 {
+  align-self: center;
+  font-family: OpenSans, sans-serif, Helvetica, Arial;
+  color: #393A68;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.login-input::placeholder {
+  color: #Adadad;
+  font-size: 14px;
 }
 
 .login-form-container {
+  margin-top: 100px;
   display: flex;
-  position: absolute;
+  justify-content: center;
+  width: 400px;
+  height: 350px;
+  background-color: white;
+  align-items: center;
+  border-radius: 4px;
 }
 
-.submit {
-   background-color: #f2f2f2;
-  width: 80%;
-  height: 40px;
-
+.login-form label {
+  font-size: 12px;
+  color: #393A68;
+  padding: 8px 0 8px 0;
 }
 
-.google-button {
+.login-submit {
   background-color: #7D72EC;
-  padding: 10px;
+  height: 40px;
+  border-radius: 4px;
+  color: white; 
+  font-size: 14px;
+  margin-top: 28px;
 }
+.login-submit:hover {
+  opacity: 30%;
+}
+
+.login-form p {
+  color: #6B7C93;
+  font-family: OpenSans, sans-serif, Helvetica, Arial;
+  margin-top: 24px;
+}
+
+.login-form a {
+  color: #7D72EC;
+  font-family: OpenSans, sans-serif, Helvetica, Arial;
+  text-decoration: none;
+}
+
+.login-form a:hover {
+  text-decoration: underline;
+}
+
+
+
+
 
 body {
   background-color: #461A42
 }
 
 .occupation-form {
-  background-color: white;
-  width: 529px;
   border-bottom: 4px solid #dadada;
-  height: 349px;
   border-radius: 4px;
   display: flex;
-  justify-content: space-around;
-  align-items: center
+  flex-direction: column;
+  align-items: center;
+  height: 300px;
 }
 .occupation-container {
+  margin-top: 100px;
   display: flex;
-  background-color: white;
-  border-radius: 4px;
   font-family: OpenSans, sans-serif, Helvetica, Arial;
   align-items: center;
   flex-direction: column;
-
+  justify-content: center;
+  height: 300px;
+  width: 529px;
 }
+
+
+.occupation-title {
+  font-size: 24px;
+  font-weight: bold;
+  font-family: OpenSans, sans-serif, Helvetica, Arial;
+}
+
+.occupation-input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.occupation-outer-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.occupation-title-container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 4px;
+  align-items: center;
+}
+
+
 
 .occupation {
   display: flex;
@@ -177,7 +268,13 @@ body {
   width: 160px;
   height: 200px;
   border-radius: 4px;
+  margin: 10px;
+  // text-align: ;
 }
+
+
+
+
 
 .user-signup {
   background-color: white;
@@ -211,6 +308,17 @@ body {
   font-weight: bold;
 }
 
+.occupation-submit {
+  // margin: 20px;
+}
+
+.occupation-input-container label {
+  font-size: 20px; 
+  color: #292A3A;
+  font-weight: bold;
+  padding: 10px;
+}
+
 .occupation.student {
   background-image: image_url('occupations/learner.png');
   background-size: contain;
@@ -226,4 +334,23 @@ body {
   
   font-size: 16px;
   font-weight: bold;
+}
+
+.student-signup {
+
+  background-color: white;
+  width: 400px;
+  height: 300px; 
+}
+
+.student-form-container {
+  display: flex;
+  flex-direction: column;
+   margin-top: 100px;
+  justify-content: center;
+  width: 400px;
+  height: 350px;
+  background-color: white;
+  align-items: center;
+  border-radius: 4px;
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { merge } from 'lodash';
-
+import {Link} from 'react-router-dom';
 class SignupForm extends React.Component {
   constructor(props) {
     super(props);
@@ -58,22 +58,36 @@ class SignupForm extends React.Component {
     const emailForm = (
       <form className="email-form" onSubmit={this.handleSubmit}>
         <h2>Welcome to Quizitz</h2>
-        <button>Sign up with Google</button>
-        <div>-or-</div>
         <label HTMLfor="email">Sign up with email </label>
-          <input id="email" type="text" onChange={this.update("email")}/>
+          <input id="email" type="text" placeholder="mmcgonagal@hogwarts.com"onChange={this.update("email")}/>
         <input className="next" type="submit" value="next"/>
       </form>
     )
 
     const occupationForm = (
       <div className="occupation-container">
-        <h2>I'm using Quizitz as...</h2>
+        
         <form className ="occupation-form">
-        <input className="occupation teacher" type="submit" value="a teacher" onClick={this.handleOccupation("teacher")}/>
-        <input className="occupation student" type="submit" value="a student" onClick={this.handleOccupation("student")} />
-        <input className="occupation parent" type="submit" value="a parent" onClick={this.handleOccupation("parent")} />
+        <div className="occupation-title-container">
+          <div className="occupation-title">I'm using Quizitz as...</div>
+          <div className="occupation-outer-container">
+            <div className="occupation-input-container">
+              <input id="teacher" className="occupation teacher" value=""type="submit" onClick={this.handleOccupation("teacher")}/>
+              <label htmlFor="teacher">a teacher</label>
+            </div>
+              <div className="occupation-input-container">
+              <input className="occupation student" type="submit"  value="" onClick={this.handleOccupation("student")} />
+                <label htmlFor="student">a student</label>
+            </div>
+              <div className="occupation-input-container">
+              <input id="parent" className="occupation parent" value="" type="submit" onClick={this.handleOccupation("parent")} />
+                <label htmlFor="parent">a parent</label>
+              </div>
+            </div>
+        </div>
+          <input className="occupation-submit" type="submit" value="I'm not connected to a school" onClick={this.handleOccupation("parent")}/>
         </form>
+          
       </div>
       )
 
@@ -93,9 +107,9 @@ class SignupForm extends React.Component {
             </select>
           </label>
           <label for="first-name">First Name</label>
-              <input id="first-name" type="text" onChange={this.update("first_name")} />
+              <input id="first-name" type="text" value={this.state.user.first_name} onChange={this.update("first_name")} />
           <label for="last_name">Last Name</label>
-              <input id="last_name" type="text" onChange={this.update("last_name")} />
+              <input id="last_name" type="text" value={this.state.user.last_name} onChange={this.update("last_name")} />
           <label for="password">Password</label>
             <input id="password" type="password" onChange={this.update("password")} />
           <input className="user-submit" type="submit" value="Complete Sign Up" />
@@ -103,8 +117,10 @@ class SignupForm extends React.Component {
       </div>
     )
 
+   
+
     const studentForm = (
-      <div>
+      <div className="student-form-container">
         <h2>Let's complete your account</h2>
         <form className="student-signup" onSubmit={this.handleSubmit}>
           <label for="birthdate">Please confirm your date of birth</label>
