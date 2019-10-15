@@ -9,19 +9,19 @@ export const receiveQuizzes = quizzes => ({
   quizzes
 })
 
-export const receiveQuiz = quiz => ({
+export const receiveQuiz = payload => ({
   type: RECEIVE_QUIZ, 
-  quiz 
+  payload 
 })
 
-export const removeQuiz = quiz => ({
+export const removeQuiz = payload => ({
   type: REMOVE_QUIZ, 
-  quiz
+  payload
 })
 
 
-export const fetchQuizzes = () => dispatch => (
-  APIUtil.fetchQuizzes().then(quizzes => dispatch(receiveQuizzes(quizzes)))
+export const fetchQuizzes = (filter) => dispatch => (
+  APIUtil.fetchQuizzes(filter).then(quizzes => dispatch(receiveQuizzes(quizzes)))
 )
 
 export const fetchQuiz = (id) => dispatch => (

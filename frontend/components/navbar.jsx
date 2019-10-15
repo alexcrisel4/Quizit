@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Navbar = ({ loggedin }) => {
   if(loggedin) {
     return(
-     <div>I'm logged in</div>
+     <Link to="/admin/quiz/new">Create a new quiz</Link>
     )
   } else {
     return (

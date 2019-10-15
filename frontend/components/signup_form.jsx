@@ -82,6 +82,7 @@ class SignupForm extends React.Component {
               <div className="occupation-input-container">
               <input id="parent" className="occupation parent" value="" type="submit" onClick={this.handleOccupation("parent")} />
                 <label htmlFor="parent">a parent</label>
+                <p>or guardian</p>
               </div>
             </div>
         </div>
@@ -93,11 +94,11 @@ class SignupForm extends React.Component {
 
     const userInfoForm = (
     
-      <div>
+      <div className ="user-form-container">
         <h2>Let's complete your account</h2>
         <form className="user-signup" onSubmit={this.handleSubmit}>
-          <label>Title
-              <select defaultValue="--">
+          <label className="user-label">Title</label>
+              <select className="user-input select" defaultValue="--">
               <option disabled value="--">--</option>
               <option value="Ms.">Ms.</option>
               <option value="Mr.">Mr.</option>
@@ -105,13 +106,12 @@ class SignupForm extends React.Component {
               <option value="Miss">Miss</option>
               <option value="Mx">Mx</option>
             </select>
-          </label>
-          <label for="first-name">First Name</label>
-              <input id="first-name" type="text" value={this.state.user.first_name} onChange={this.update("first_name")} />
-          <label for="last_name">Last Name</label>
-              <input id="last_name" type="text" value={this.state.user.last_name} onChange={this.update("last_name")} />
-          <label for="password">Password</label>
-            <input id="password" type="password" onChange={this.update("password")} />
+          <label className="user-label" for="first-name">First name</label>
+          <input placeHolder="Anne" className="user-input" id="first-name" type="text" value={this.state.user.first_name} onChange={this.update("first_name")} />
+          <label className="user-label" for="last_name">Last ame</label>
+          <input placeHolder="Perkins" className="user-input" id="last_name" type="text" value={this.state.user.last_name} onChange={this.update("last_name")} />
+          <label className="user-label" for="password">Password</label>
+          <input placeHolder="******" className="user-input" id="password" type="password" onChange={this.update("password")} />
           <input className="user-submit" type="submit" value="Complete Sign Up" />
         </form>
       </div>
@@ -123,15 +123,17 @@ class SignupForm extends React.Component {
       <div className="student-form-container">
         <h2>Let's complete your account</h2>
         <form className="student-signup" onSubmit={this.handleSubmit}>
-          <label for="birthdate">Please confirm your date of birth</label>
-            <input id="birthdate"type="date" onChange={this.update("birthdate")} />
-          <label for="student-first-name">First Name</label>
-              <input for="student-first-name" type="text" onChange={this.update("first_name")} />
-          <label for="student-last-name">Last Name</label>
-              <input id="student-last-name" type="text" onChange={this.update("last_name")} />
-          <label for="student-password">Password</label>
-            <input id="student-password" type="password" onChange={this.update("password")} />
-          <input type="submit" value="Complete Sign Up" />
+          <label className="student-form-label" for="birthdate">Please confirm your date of birth</label>
+            <input className="student-form-input" id="birthdate"type="date" onChange={this.update("birthdate")} />
+          <label className="student-form-label" for="student-email">Parent or guardian's email</label>
+          <input placeHolder="name@email.com" className="student-form-input" id="student-email" type="text" onChange={this.update("first_name")} />
+          <label className="student-form-label"for="student-first-name">First Name</label>
+          <input placeHolder="Mark"className="student-form-input"id="student-first-name" type="text" onChange={this.update("first_name")} />
+          <label className="student-form-label"for="student-last-name">Last Name</label>
+          <input placeHolder="Brendanawicz"className="student-form-input"id="student-last-name" type="text" onChange={this.update("last_name")} />
+          <label className="student-form-label"for="student-password">Password</label>
+          <input placeHolder="******" className="student-form-input"id="student-password" type="password" onChange={this.update("password")} />
+          <input className="student-submit" type="submit" value="Complete Sign Up" />
         </form>
       </div>
     )

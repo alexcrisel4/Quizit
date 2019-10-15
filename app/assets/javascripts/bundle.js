@@ -86,6 +86,87 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./frontend/actions/quiz_actions.js":
+/*!******************************************!*\
+  !*** ./frontend/actions/quiz_actions.js ***!
+  \******************************************/
+/*! exports provided: RECEIVE_QUIZZES, RECEIVE_QUIZ, REMOVE_QUIZ, receiveQuizzes, receiveQuiz, removeQuiz, fetchQuizzes, fetchQuiz, createQuiz, updateQuiz, deleteQuiz */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_QUIZZES", function() { return RECEIVE_QUIZZES; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_QUIZ", function() { return RECEIVE_QUIZ; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_QUIZ", function() { return REMOVE_QUIZ; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveQuizzes", function() { return receiveQuizzes; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveQuiz", function() { return receiveQuiz; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeQuiz", function() { return removeQuiz; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchQuizzes", function() { return fetchQuizzes; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchQuiz", function() { return fetchQuiz; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createQuiz", function() { return createQuiz; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateQuiz", function() { return updateQuiz; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteQuiz", function() { return deleteQuiz; });
+/* harmony import */ var _util_quiz_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/quiz_api_util */ "./frontend/util/quiz_api_util.js");
+
+var RECEIVE_QUIZZES = "RECEIVE_QUIZZES";
+var RECEIVE_QUIZ = "RECEIVE_QUIZ";
+var REMOVE_QUIZ = "REMOVE_QUIZ";
+var receiveQuizzes = function receiveQuizzes(quizzes) {
+  return {
+    type: RECEIVE_QUIZZES,
+    quizzes: quizzes
+  };
+};
+var receiveQuiz = function receiveQuiz(payload) {
+  return {
+    type: RECEIVE_QUIZ,
+    payload: payload
+  };
+};
+var removeQuiz = function removeQuiz(payload) {
+  return {
+    type: REMOVE_QUIZ,
+    payload: payload
+  };
+};
+var fetchQuizzes = function fetchQuizzes(filter) {
+  return function (dispatch) {
+    return _util_quiz_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchQuizzes"](filter).then(function (quizzes) {
+      return dispatch(receiveQuizzes(quizzes));
+    });
+  };
+};
+var fetchQuiz = function fetchQuiz(id) {
+  return function (dispatch) {
+    return _util_quiz_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchQuiz"](id).then(function (quiz) {
+      return dispatch(receiveQuiz(quiz));
+    });
+  };
+};
+var createQuiz = function createQuiz(quiz) {
+  return function (dispatch) {
+    return _util_quiz_api_util__WEBPACK_IMPORTED_MODULE_0__["createQuiz"](quiz).then(function (quiz) {
+      return dispatch(receiveQuiz(quiz));
+    });
+  };
+};
+var updateQuiz = function updateQuiz(quiz) {
+  return function (dispatch) {
+    return _util_quiz_api_util__WEBPACK_IMPORTED_MODULE_0__["updateQuiz"](quiz).then(function (quiz) {
+      return dispatch(receiveQuiz(quiz));
+    });
+  };
+};
+var deleteQuiz = function deleteQuiz(id) {
+  return function (dispatch) {
+    return _util_quiz_api_util__WEBPACK_IMPORTED_MODULE_0__["deleteQuiz"](id).then(function (quiz) {
+      return dispatch(removeQuiz(quiz));
+    });
+  };
+};
+
+/***/ }),
+
 /***/ "./frontend/actions/session_actions.js":
 /*!*********************************************!*\
   !*** ./frontend/actions/session_actions.js ***!
@@ -171,6 +252,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _navbar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./navbar */ "./frontend/components/navbar.jsx");
 /* harmony import */ var _sidebar_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./sidebar_container */ "./frontend/components/sidebar_container.js");
 /* harmony import */ var _util_route_util__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../util/route_util */ "./frontend/util/route_util.jsx");
+/* harmony import */ var _quizzes_quiz_index_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./quizzes/quiz_index_container */ "./frontend/components/quizzes/quiz_index_container.js");
+/* harmony import */ var _quizzes_quiz_show_container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./quizzes/quiz_show_container */ "./frontend/components/quizzes/quiz_show_container.js");
+/* harmony import */ var _quizzes_quiz_form_container__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./quizzes/quiz_form_container */ "./frontend/components/quizzes/quiz_form_container.js");
+
+
+
+
 
 
 
@@ -198,7 +286,17 @@ var App = function App(_ref) {
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_6__["AuthRoute"], {
     path: "/signup",
     component: _signup_container__WEBPACK_IMPORTED_MODULE_3__["default"]
-  }));
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_6__["ProtectedRoute"], {
+    exact: true,
+    path: "/admin",
+    component: _quizzes_quiz_index_container__WEBPACK_IMPORTED_MODULE_7__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_6__["ProtectedRoute"], {
+    path: "/admin/quiz/new",
+    component: _quizzes_quiz_form_container__WEBPACK_IMPORTED_MODULE_9__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_6__["ProtectedRoute"], {
+    path: "/admin/quiz/:quizId",
+    component: _quizzes_quiz_show_container__WEBPACK_IMPORTED_MODULE_8__["default"]
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
@@ -393,7 +491,9 @@ var Navbar = function Navbar(_ref) {
   var loggedin = _ref.loggedin;
 
   if (loggedin) {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "I'm logged in");
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      to: "/admin/quiz/new"
+    }, "Create a new quiz");
   } else {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
       className: "login-signup"
@@ -417,6 +517,506 @@ var Navbar = function Navbar(_ref) {
 
 /***/ }),
 
+/***/ "./frontend/components/quizzes/quiz_form.jsx":
+/*!***************************************************!*\
+  !*** ./frontend/components/quizzes/quiz_form.jsx ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var QuizForm =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(QuizForm, _React$Component);
+
+  function QuizForm(props) {
+    var _this;
+
+    _classCallCheck(this, QuizForm);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(QuizForm).call(this, props));
+    _this.state = _this.props.formDefault;
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(QuizForm, [{
+    key: "update",
+    value: function update(field) {
+      var _this2 = this;
+
+      return function (e) {
+        e.preventDefault();
+
+        _this2.setState(_defineProperty({}, field, e.target.value));
+      };
+    }
+  }, {
+    key: "handleSubmit",
+    value: function handleSubmit(e) {
+      e.preventDefault;
+      var quiz = Object.assign({}, this.state);
+      this.props.createQuiz(quiz);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "quiz-form-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        className: "quiz-form",
+        onSubmit: this.handleSubmit
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "form-head"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "https://cf.quizizz.com/img/editor/createaquiz.png"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Create a quiz")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: "new-quiz-name"
+      }, "1. Name this quiz"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        placeholder: "Quiz Name",
+        id: "new-quiz-name",
+        type: "text",
+        onChange: this.update("name")
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "2. Choose relavent subjects"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "subject-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.update("subject"),
+        value: "Matematics",
+        className: "subject"
+      }, "Mathmatics"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.update("subject"),
+        value: "English",
+        className: "subject"
+      }, "English"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.update("subject"),
+        value: "Physics",
+        className: "subject"
+      }, "Physics"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.update("subject"),
+        value: "Chemistry",
+        className: "subject"
+      }, "Chemistry"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.update("subject"),
+        value: "Science",
+        className: "subject"
+      }, "Science"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.update("subject"),
+        value: "Computers",
+        className: "subject"
+      }, "Computers"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.update("subject"),
+        value: "Geography",
+        className: "subject"
+      }, "Geography"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.update("subject"),
+        value: "World Languages",
+        className: "subject"
+      }, "World Languages"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.update("subject"),
+        value: "History",
+        className: "subject"
+      }, "History"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.update("subject"),
+        value: "Social Studies",
+        className: "subject"
+      }, "Social Studies"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.update("subject"),
+        value: "Physical Ed",
+        className: "subject"
+      }, "Physical Ed"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.update("subject"),
+        value: "Arts",
+        className: "subject"
+      }, "Arts"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.update("subject"),
+        value: "Fun",
+        className: "subject"
+      }, "Fun"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.update("subject"),
+        value: "Professional Development",
+        className: "subject"
+      }, "Professional Development"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.update("subject"),
+        value: "Arcitecture",
+        className: "subject"
+      }, "Arcitecture"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.update("subject"),
+        value: "BusinessDesign",
+        className: "subject"
+      }, "BusinessDesign"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.update("subject"),
+        value: "Design",
+        className: "subject"
+      }, "Design"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.update("subject"),
+        value: "Education",
+        className: "subject"
+      }, "Education"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.update("subject"),
+        value: "Industrial Technology",
+        className: "subject"
+      }, "Industrial Technology"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.update("subject"),
+        value: "Journalism",
+        className: "subject"
+      }, "Journalism"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.update("subject"),
+        value: "Life Skills",
+        className: "subject"
+      }, "Life Skills"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.update("subject"),
+        value: "Moral Science",
+        className: "subject"
+      }, "Moral Science"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.update("subject"),
+        value: "Performing Arts",
+        className: "subject"
+      }, "Performing Arts"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.update("subject"),
+        value: "Philosophy",
+        className: "subject"
+      }, "Philosophy"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.update("subject"),
+        value: "Religious Studies",
+        className: "subject"
+      }, "Religious Studies"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.update("subject"),
+        value: "Special Education",
+        className: "subject"
+      }, "Special Education"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.update("subject"),
+        value: "Specialty",
+        className: "subject"
+      }, "Specialty"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.update("subject"),
+        value: "Other",
+        className: "subject"
+      }, "Other")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "new-quiz-buttons"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      }, "Cancel"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "new-quiz-submit",
+        type: "submit",
+        value: "Next"
+      }))));
+    }
+  }]);
+
+  return QuizForm;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (QuizForm);
+
+/***/ }),
+
+/***/ "./frontend/components/quizzes/quiz_form_container.js":
+/*!************************************************************!*\
+  !*** ./frontend/components/quizzes/quiz_form_container.js ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _quiz_form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./quiz_form */ "./frontend/components/quizzes/quiz_form.jsx");
+/* harmony import */ var _actions_quiz_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/quiz_actions */ "./frontend/actions/quiz_actions.js");
+
+
+
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    formDefault: {
+      name: "",
+      subject: "",
+      grade: "",
+      author_id: state.session.id,
+      "public": true
+    }
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    createQuiz: function createQuiz(quiz) {
+      return dispatch(Object(_actions_quiz_actions__WEBPACK_IMPORTED_MODULE_2__["createQuiz"])(quiz));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_quiz_form__WEBPACK_IMPORTED_MODULE_1__["default"]));
+
+/***/ }),
+
+/***/ "./frontend/components/quizzes/quiz_index.jsx":
+/*!****************************************************!*\
+  !*** ./frontend/components/quizzes/quiz_index.jsx ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _quiz_index_item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./quiz_index_item */ "./frontend/components/quizzes/quiz_index_item.jsx");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var QuizIndex =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(QuizIndex, _React$Component);
+
+  function QuizIndex(props) {
+    _classCallCheck(this, QuizIndex);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(QuizIndex).call(this, props));
+  }
+
+  _createClass(QuizIndex, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.fetchQuizzes(this.props.filter);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var quizzes = this.props.quizzes.map(function (quiz) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_quiz_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          quiz: quiz
+        });
+      });
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, quizzes);
+    }
+  }]);
+
+  return QuizIndex;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (QuizIndex);
+
+/***/ }),
+
+/***/ "./frontend/components/quizzes/quiz_index_container.js":
+/*!*************************************************************!*\
+  !*** ./frontend/components/quizzes/quiz_index_container.js ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _quiz_index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./quiz_index */ "./frontend/components/quizzes/quiz_index.jsx");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_quiz_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/quiz_actions */ "./frontend/actions/quiz_actions.js");
+/* harmony import */ var _reducers_selectors__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../reducers/selectors */ "./frontend/reducers/selectors.js");
+
+
+
+
+
+var mapStateToProps = function mapStateToProps(state, ownProps) {
+  var filter = ownProps.filter;
+  var quizzes;
+
+  if (filter) {
+    quizzes = Object(_reducers_selectors__WEBPACK_IMPORTED_MODULE_3__["selectFilteredQuizzes"])(state, filter);
+  } else {
+    quizzes = Object.values(state.entities.quizzes);
+  }
+
+  return {
+    quizzes: quizzes,
+    filter: filter
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    fetchQuizzes: function fetchQuizzes(filter) {
+      return dispatch(Object(_actions_quiz_actions__WEBPACK_IMPORTED_MODULE_2__["fetchQuizzes"])(filter));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, mapDispatchToProps)(_quiz_index__WEBPACK_IMPORTED_MODULE_0__["default"]));
+
+/***/ }),
+
+/***/ "./frontend/components/quizzes/quiz_index_item.jsx":
+/*!*********************************************************!*\
+  !*** ./frontend/components/quizzes/quiz_index_item.jsx ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+var QuizIndexItem = function QuizIndexItem(_ref) {
+  var quiz = _ref.quiz;
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_0__["Link"], {
+    to: "/admin/quiz/".concat(quiz.id)
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", null, quiz.name)));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (QuizIndexItem);
+
+/***/ }),
+
+/***/ "./frontend/components/quizzes/quiz_show.jsx":
+/*!***************************************************!*\
+  !*** ./frontend/components/quizzes/quiz_show.jsx ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var QuizShow =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(QuizShow, _React$Component);
+
+  function QuizShow(props) {
+    _classCallCheck(this, QuizShow);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(QuizShow).call(this, props));
+  }
+
+  _createClass(QuizShow, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.fetchQuiz(this.props.match.params.quizId);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var quiz = this.props.quiz;
+
+      if (quiz) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, quiz.name)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Subject: ", quiz.subject), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Grade: ", quiz.grade));
+      } else {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Loading...");
+      }
+    }
+  }]);
+
+  return QuizShow;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (QuizShow);
+
+/***/ }),
+
+/***/ "./frontend/components/quizzes/quiz_show_container.js":
+/*!************************************************************!*\
+  !*** ./frontend/components/quizzes/quiz_show_container.js ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _quiz_show__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./quiz_show */ "./frontend/components/quizzes/quiz_show.jsx");
+/* harmony import */ var _actions_quiz_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/quiz_actions */ "./frontend/actions/quiz_actions.js");
+
+
+
+
+var mapStateToProps = function mapStateToProps(state, ownProps) {
+  return {
+    quiz: state.entities.quizzes[ownProps.match.params.quizId]
+  };
+};
+
+var mapDipatchToProps = function mapDipatchToProps(dispatch) {
+  return {
+    fetchQuiz: function fetchQuiz(id) {
+      dispatch(Object(_actions_quiz_actions__WEBPACK_IMPORTED_MODULE_2__["fetchQuiz"])(id));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDipatchToProps)(_quiz_show__WEBPACK_IMPORTED_MODULE_1__["default"]));
+
+/***/ }),
+
 /***/ "./frontend/components/root.jsx":
 /*!**************************************!*\
   !*** ./frontend/components/root.jsx ***!
@@ -431,6 +1031,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _app_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app_container */ "./frontend/components/app_container.js");
+/* harmony import */ var _quizzes_quiz_index_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./quizzes/quiz_index_container */ "./frontend/components/quizzes/quiz_index_container.js");
+
 
 
 
@@ -722,16 +1324,21 @@ function (_React$Component) {
         onClick: this.handleOccupation("parent")
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         htmlFor: "parent"
-      }, "a parent")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, "a parent"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "or guardian")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "occupation-submit",
         type: "submit",
         value: "I'm not connected to a school",
         onClick: this.handleOccupation("parent")
       })));
-      var userInfoForm = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Let's complete your account"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      var userInfoForm = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-form-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Let's complete your account"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "user-signup",
         onSubmit: this.handleSubmit
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Title", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "user-label"
+      }, "Title"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+        className: "user-input select",
         defaultValue: "--"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
         disabled: true,
@@ -746,23 +1353,32 @@ function (_React$Component) {
         value: "Miss"
       }, "Miss"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
         value: "Mx"
-      }, "Mx"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+      }, "Mx")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "user-label",
         "for": "first-name"
-      }, "First Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, "First name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        placeHolder: "Anne",
+        className: "user-input",
         id: "first-name",
         type: "text",
         value: this.state.user.first_name,
         onChange: this.update("first_name")
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "user-label",
         "for": "last_name"
-      }, "Last Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, "Last ame"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        placeHolder: "Perkins",
+        className: "user-input",
         id: "last_name",
         type: "text",
         value: this.state.user.last_name,
         onChange: this.update("last_name")
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "user-label",
         "for": "password"
       }, "Password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        placeHolder: "******",
+        className: "user-input",
         id: "password",
         type: "password",
         onChange: this.update("password")
@@ -777,30 +1393,51 @@ function (_React$Component) {
         className: "student-signup",
         onSubmit: this.handleSubmit
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "student-form-label",
         "for": "birthdate"
       }, "Please confirm your date of birth"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "student-form-input",
         id: "birthdate",
         type: "date",
         onChange: this.update("birthdate")
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        "for": "student-first-name"
-      }, "First Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        "for": "student-first-name",
+        className: "student-form-label",
+        "for": "student-email"
+      }, "Parent or guardian's email"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        placeHolder: "name@email.com",
+        className: "student-form-input",
+        id: "student-email",
         type: "text",
         onChange: this.update("first_name")
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "student-form-label",
+        "for": "student-first-name"
+      }, "First Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        placeHolder: "Mark",
+        className: "student-form-input",
+        id: "student-first-name",
+        type: "text",
+        onChange: this.update("first_name")
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "student-form-label",
         "for": "student-last-name"
       }, "Last Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        placeHolder: "Brendanawicz",
+        className: "student-form-input",
         id: "student-last-name",
         type: "text",
         onChange: this.update("last_name")
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "student-form-label",
         "for": "student-password"
       }, "Password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        placeHolder: "******",
+        className: "student-form-input",
         id: "student-password",
         type: "password",
         onChange: this.update("password")
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "student-submit",
         type: "submit",
         value: "Complete Sign Up"
       })));
@@ -900,10 +1537,13 @@ document.addEventListener("DOMContentLoaded", function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _users_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./users_reducer */ "./frontend/reducers/users_reducer.js");
+/* harmony import */ var _quizzes_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./quizzes_reducer */ "./frontend/reducers/quizzes_reducer.js");
+
 
 
 var entitiesReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
-  users: _users_reducer__WEBPACK_IMPORTED_MODULE_1__["default"]
+  users: _users_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
+  quizzes: _quizzes_reducer__WEBPACK_IMPORTED_MODULE_2__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (entitiesReducer);
 
@@ -926,6 +1566,49 @@ var errorsReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"]
   session: _session_errors_reducer__WEBPACK_IMPORTED_MODULE_1__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (errorsReducer);
+
+/***/ }),
+
+/***/ "./frontend/reducers/quizzes_reducer.js":
+/*!**********************************************!*\
+  !*** ./frontend/reducers/quizzes_reducer.js ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_quiz_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/quiz_actions */ "./frontend/actions/quiz_actions.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+var quizzesReducer = function quizzesReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+  var newState;
+
+  switch (action.type) {
+    case _actions_quiz_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_QUIZZES"]:
+      newState = Object.assign({}, state, action.quizzes);
+      return newState;
+
+    case _actions_quiz_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_QUIZ"]:
+      newState = Object.assign({}, state, _defineProperty({}, action.payload.quiz.id, action.payload.quiz));
+      return newState;
+
+    case _actions_quiz_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_QUIZ"]:
+      newState = Object.assign({}, state);
+      delete newState[action.payload.quiz.id];
+      return newState;
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (quizzesReducer);
 
 /***/ }),
 
@@ -952,6 +1635,26 @@ var rootReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])(
   entities: _entities_reducer__WEBPACK_IMPORTED_MODULE_3__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (rootReducer);
+
+/***/ }),
+
+/***/ "./frontend/reducers/selectors.js":
+/*!****************************************!*\
+  !*** ./frontend/reducers/selectors.js ***!
+  \****************************************/
+/*! exports provided: selectFilteredQuizzes */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "selectFilteredQuizzes", function() { return selectFilteredQuizzes; });
+var selectFilteredQuizzes = function selectFilteredQuizzes(state, filter) {
+  debugger;
+  var allQuizzes = Object.values(state.entities.quizzes);
+  return allQuizzes.filter(function (quiz) {
+    return quiz[Object.keys(filter)[0]] === Object.values(filter)[0];
+  });
+};
 
 /***/ }),
 
@@ -1084,6 +1787,61 @@ var configureStore = function configureStore() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (configureStore);
+
+/***/ }),
+
+/***/ "./frontend/util/quiz_api_util.js":
+/*!****************************************!*\
+  !*** ./frontend/util/quiz_api_util.js ***!
+  \****************************************/
+/*! exports provided: fetchQuizzes, fetchQuiz, createQuiz, updateQuiz, deleteQuiz */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchQuizzes", function() { return fetchQuizzes; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchQuiz", function() { return fetchQuiz; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createQuiz", function() { return createQuiz; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateQuiz", function() { return updateQuiz; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteQuiz", function() { return deleteQuiz; });
+var fetchQuizzes = function fetchQuizzes(filter) {
+  return $.ajax({
+    method: "GET",
+    url: "api/quizzes",
+    data: filter
+  });
+};
+var fetchQuiz = function fetchQuiz(id) {
+  return $.ajax({
+    method: "GET",
+    url: "api/quizzes/".concat(id)
+  });
+};
+var createQuiz = function createQuiz(quiz) {
+  debugger;
+  return $.ajax({
+    method: "POST",
+    url: "api/quizzes",
+    data: {
+      quiz: quiz
+    }
+  });
+};
+var updateQuiz = function updateQuiz(quiz) {
+  return $.ajax({
+    method: "PATCH",
+    url: "api/quizzes".concat(quiz.id),
+    data: {
+      quiz: quiz
+    }
+  });
+};
+var deleteQuiz = function deleteQuiz(id) {
+  return $.ajax({
+    method: "DELETE",
+    url: "api/quizzes/".concat(id)
+  });
+};
 
 /***/ }),
 

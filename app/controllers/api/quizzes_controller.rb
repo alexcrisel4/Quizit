@@ -2,6 +2,7 @@ class Api::QuizzesController < ApplicationController
 
   def create 
     @quiz = Quiz.new(quiz_params)
+    debugger;
     if @quiz.save 
       render :show
     else 
@@ -11,7 +12,8 @@ class Api::QuizzesController < ApplicationController
 
 
   def show 
-    @quiz = Quiz.find_by(params[:id])
+    @quiz = Quiz.find(params[:id])
+    
     if @quiz 
       render :show 
     else 
@@ -20,22 +22,25 @@ class Api::QuizzesController < ApplicationController
   end 
 
   def index 
-    @quizzes = Quiz.all 
+    if params[:subject] 
+      @quizzes = Quiz.find_by(params[:subject]) 
+    else 
+      @quizzes = Quiz.all 
+    end
   end 
 
   def destroy 
     @quiz = Quiz.find_by(params[:id])
     if @quiz
-      @quiz.delete 
-      render :index
+      @quiz.destroy 
+      render :show
     end
-
   end 
 
 
   def update 
     @quiz = Quiz.find_by(params[:id])
-
+    
   end 
 
   private 
