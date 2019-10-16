@@ -1,5 +1,5 @@
 export const selectFilteredQuizzes = (state, filter) => {
-  debugger;
+ 
   
   let allQuizzes = Object.values(state.entities.quizzes)
   return allQuizzes.filter((quiz) => {

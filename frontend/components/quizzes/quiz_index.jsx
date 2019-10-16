@@ -13,14 +13,16 @@ class QuizIndex extends React.Component {
 
 
   render () {
-    let quizzes = this.props.quizzes.map(quiz => {
-      return <QuizIndexItem quiz={quiz}/>
+    let quizzes = this.props.quizzes.map((quiz, i) => {
+      return <li><QuizIndexItem key={i} quiz={quiz} /></li>
     })
       
     return(
-      <ul>
-        {quizzes}
-      </ul>
+      <div className="index-container">
+        <ul>
+          {quizzes}
+        </ul>
+      </div>
     )
   }
 }

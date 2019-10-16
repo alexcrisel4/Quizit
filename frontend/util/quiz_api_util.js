@@ -14,7 +14,7 @@ export const fetchQuiz = (id) => (
 )
 
 export const createQuiz = quiz => {
-  debugger;
+
   return ($.ajax({
     method: "POST", 
     url: "api/quizzes",

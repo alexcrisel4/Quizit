@@ -2,7 +2,7 @@ class Api::QuizzesController < ApplicationController
 
   def create 
     @quiz = Quiz.new(quiz_params)
-    debugger;
+   
     if @quiz.save 
       render :show
     else 

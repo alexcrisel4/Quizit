@@ -1,9 +1,9 @@
 import React from 'react';
-import { closeModal } from '../../actions/modal_actions';
+import { closeModal } from '../actions/modal_actions';
 import { connect } from 'react-redux';
-import LoginFormContainer from '../session_form/login_form_container';
+import LoginFormContainer from './login_form_container';
 
-
+import SidebarContainer from './sidebar_container';
 function Modal({ modal, closeModal }) {
   if (!modal) {
     return null;
@@ -12,6 +12,9 @@ function Modal({ modal, closeModal }) {
   switch (modal) {
     case 'login':
       component = <LoginFormContainer />;
+      break;
+    case 'sidebar':
+      component = <SidebarContainer />
       break;
     default:
       return null;

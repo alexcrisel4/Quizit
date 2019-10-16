@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 
 class QuizForm extends React.Component {
@@ -51,7 +53,7 @@ class QuizForm extends React.Component {
           <button onClick={this.update("subject")} value="Fun" className="subject">Fun</button>
           <button onClick={this.update("subject")} value="Professional Development" className="subject">Professional Development</button>
           <button onClick={this.update("subject")} value="Arcitecture" className="subject">Arcitecture</button>
-          <button onClick={this.update("subject")} value="BusinessDesign" className="subject">BusinessDesign</button>
+          <button onClick={this.update("subject")} value="Business Design" className="subject">Business Design</button>
           <button onClick={this.update("subject")} value="Design" className="subject">Design</button>
           <button onClick={this.update("subject")} value="Education" className="subject">Education</button>
           <button onClick={this.update("subject")} value="Industrial Technology" className="subject">Industrial Technology</button>
@@ -66,7 +68,7 @@ class QuizForm extends React.Component {
           <button onClick={this.update("subject")} value="Other" className="subject">Other</button>
           </div>
           <div className="new-quiz-buttons">
-          <a href="">Cancel</a>
+            <Link to="/admin" className="new-quiz-cancel">Cancel</Link>
           <input className="new-quiz-submit" type="submit" value="Next"/>
           </div>
         </form>

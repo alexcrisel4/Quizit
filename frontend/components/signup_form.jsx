@@ -20,7 +20,7 @@ class SignupForm extends React.Component {
   }
 
   handleSubmit(e) {
-    // debugger;
+   
     e.preventDefault();
   
     if(this.state.activeForm === "emailForm") {
@@ -33,7 +33,7 @@ class SignupForm extends React.Component {
 
   update(field) {
    
-    // debugger;
+    
     return e => this.setState(
       merge({}, this.state, {user: {[field]: e.target.value}})
     )

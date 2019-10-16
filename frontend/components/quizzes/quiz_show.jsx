@@ -17,13 +17,15 @@ class QuizShow extends React.Component {
      let quiz = this.props.quiz
      if(quiz) {
       return( 
+        <div className="show-container">
         <ul>
-          <li>
+            <li className="show-item">
             <h2>{quiz.name}</h2>
           </li>
-          <li>Subject: {quiz.subject}</li>
-          <li>Grade: {quiz.grade}</li>
+            <li className="show-item little">Subject: {quiz.subject} </li>
+          <li className="show-item little" >Grade: {quiz.grade}</li>
         </ul>
+        </div>
       )
      } else {
        return(
