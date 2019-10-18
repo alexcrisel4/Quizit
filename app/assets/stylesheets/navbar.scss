@@ -16,6 +16,10 @@
   border: none;
   padding: 12px;
 }
+.menu span{
+  width: 15px;
+  height: 5px;
+}
 
 .nav-create {
   padding: 10px;
@@ -29,10 +33,37 @@
 
 }
 
+.login-link {
+  color: white;
+  background-color: rgba(0,0,0,0.2);
+  width: 64px;
+  height: 30px;
+  cursor: pointer;
+  line-height: 30px;
+  font-family: OpenSans, sans-serif, Helvetica, Arial;
+  border: none;
+  font-weight: bold;
+  border-radius: 4px;
+  
+}
+
+.login {
+  // align-self: center;
+}
+
+.login-link:hover {
+  background-color: rgba(0,0,0,0.4);
+}
+
 i {
   font-family: 'Font Awesome 5 Pro';
     font-weight: 900;
     width: 10px;
     height: 10px;
     color: white;
+}
+
+.links-container{
+   display: flex; 
+   justify-content: flex-end;
 }

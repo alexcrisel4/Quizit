@@ -4,6 +4,7 @@
 
 
 .quiz-form-container {
+  margin-top: 90px;
   background-color: white;
   height: 475px;
   width: 450px;
@@ -128,48 +129,4 @@ img {
   background-color: rgba(0,0,0,0.1);
 }
 
-
-.index-container ul{
-  display: flex;
-  flex-direction: row;
-  list-style: none;
-}
-
-.index-container ul li {
-  background-color: white;
-  margin: 10px;
-  height: 198px;
-  width: 198px;
-  border-radius: 4px;
-  text-align: center;
-  
-}
-
-.index-container a {
-  font-family: OpenSans, sans-serif, Helvetica, Arial;
-  font-size: 16px;
-  color: #292A3A;
-  font-weight: 600;
-  text-decoration: none;
-  
-}
-
-
-.show-container {
-  width: 600px;
-  height: 200px;
-  background-color: white;
-  border-radius: 4px;
-}
-
-.show-item {
-  font-family: OpenSans, sans-serif, Helvetica, Arial;
-  list-style: none;
-  color: #292A3A
-}
-
-.little {
-      font-size: 12px;
-    color: #6B7C93;
-}
 

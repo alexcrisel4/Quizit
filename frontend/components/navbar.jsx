@@ -13,17 +13,21 @@ const Navbar = ({ loggedin, openModal }) => {
           <div></div>
           <div></div>
         </button>
+        <div>
         <i class="fa fa-plus-circle"></i>
      <Link className="nav-create" to="/admin/quiz/new">Create a new quiz</Link>
+        </div>
       </nav>
     )
   } else {
     return (
       <nav className="login-signup">
+        <div className="links-container">
         <ul className="nav-links">
           <li className="login" ><button onClick={() => openModal('login')} className="login-link">Log in</button></li>
           <li className="signup"><Link className="signup-link" to="/signup">Sign up</Link></li>
         </ul>
+        </div>
       </nav>
     )
   }

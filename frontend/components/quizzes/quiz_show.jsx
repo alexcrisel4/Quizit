@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from 'react-router-dom';
 
 class QuizShow extends React.Component {
    constructor(props) {
@@ -18,6 +18,7 @@ class QuizShow extends React.Component {
      if(quiz) {
       return( 
         <div className="show-container">
+          <div className="quiz-info">
         <ul>
             <li className="show-item">
             <h2>{quiz.name}</h2>
@@ -25,6 +26,12 @@ class QuizShow extends React.Component {
             <li className="show-item little">Subject: {quiz.subject} </li>
           <li className="show-item little" >Grade: {quiz.grade}</li>
         </ul>
+          </div>
+          <div className="show-links">
+        <ul>
+              <li className="show-edit"><i class="fa fa-pencil"></i><Link className="show-edit-link" to="/">Edit</Link></li>
+        </ul>
+          </div>
         </div>
       )
      } else {

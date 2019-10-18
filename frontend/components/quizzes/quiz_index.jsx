@@ -18,7 +18,9 @@ class QuizIndex extends React.Component {
     })
       
     return(
+      
       <div className="index-container">
+        <h2>What will you teach today?</h2>
         <ul>
           {quizzes}
         </ul>

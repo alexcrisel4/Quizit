@@ -1,15 +1,22 @@
 #sidebar {
-  width: 25%; 
-  height: 100%; 
-  
+  width: 248px; 
+  height: 100vh; 
   background-color: #461A42;
+  box-sizing: border-box;
+  position: fixed;
+  left: -50vw;
+  bottom: -50vh;
+  display: flex;
+  justify-content: flex-start;
+  // top: 0;
+
 }
 
-.menu span{
-  width: 15px;
-  height: 5px;
-
+.fa{
+  padding: 10px;
+ 
 }
+
 
 .logout-button{
   background: transparent;
@@ -25,7 +32,7 @@
   color: white;
   font-family: Opensans sans-serif, Helvetica, Arial;
   border: none;
-  padding: 0 12px;
+  margin-left: -25px;
   line-height: 48px;
   font-weight: normal;
   font-size: 14px;

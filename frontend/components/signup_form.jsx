@@ -59,7 +59,7 @@ class SignupForm extends React.Component {
       <form className="email-form" onSubmit={this.handleSubmit}>
         <h2>Welcome to Quizitz</h2>
         <label HTMLfor="email">Sign up with email </label>
-          <input id="email" type="text" placeholder="mmcgonagal@hogwarts.com"onChange={this.update("email")}/>
+          <input id="email" type="text" placeholder="leslieknope@pawnee.gov"onChange={this.update("email")}/>
         <input className="next" type="submit" value="next"/>
       </form>
     )

@@ -1,5 +1,5 @@
 json.quiz do
-  json.extract! @quiz, :id, :name, :author_id, :grade, :public
+  json.extract! @quiz, :id, :name, :author_id, :grade, :public, :subject
  
 end
 
