@@ -8,6 +8,7 @@ class LoginForm extends React.Component {
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleDemo = this.handleDemo.bind(this)
   }
 
   handleSubmit(e) {
@@ -22,6 +23,16 @@ class LoginForm extends React.Component {
       [field]: e.target.value
     })
   }
+  handleDemo(e) {
+    e.preventDefault;
+    let user = {
+      email: "demo@demouser.com",
+      password: "demouser"
+    }
+    this.props.processForm(user);
+    this.props.closeModal();
+
+  }
 
   render() {
     return (
@@ -33,6 +44,7 @@ class LoginForm extends React.Component {
           <label for="login-password" >Password</label>
           <input id="login-password" className="login-input" type="password" onChange={this.update("password")} />
           <input className="login-submit" type="submit" value="LOG IN"/>
+          <input className="login-submit" type="submit" onClick={this.handleDemo} value="DEMO LOGIN" />
           <p>Don't have an account? <Link to="/signup">Click Here</Link> to sign up</p>
         </form>
       </div>

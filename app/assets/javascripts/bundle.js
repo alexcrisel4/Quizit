@@ -400,6 +400,7 @@ function (_React$Component) {
       password: ""
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.handleDemo = _this.handleDemo.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -419,6 +420,17 @@ function (_React$Component) {
       return function (e) {
         return _this2.setState(_defineProperty({}, field, e.target.value));
       };
+    }
+  }, {
+    key: "handleDemo",
+    value: function handleDemo(e) {
+      e.preventDefault;
+      var user = {
+        email: "demo@demouser.com",
+        password: "demouser"
+      };
+      this.props.processForm(user);
+      this.props.closeModal();
     }
   }, {
     key: "render",
@@ -447,6 +459,11 @@ function (_React$Component) {
         className: "login-submit",
         type: "submit",
         value: "LOG IN"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "login-submit",
+        type: "submit",
+        onClick: this.handleDemo,
+        value: "DEMO LOGIN"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Don't have an account? ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/signup"
       }, "Click Here"), " to sign up")));
@@ -612,7 +629,10 @@ var Navbar = function Navbar(_ref) {
   } else {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
       className: "login-signup"
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      src: "../../app/assets/images/quizit_logo.jpeg",
+      alt: "logo"
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "links-container"
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
       className: "nav-links"
@@ -1229,8 +1249,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _app_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app_container */ "./frontend/components/app_container.js");
-/* harmony import */ var _quizzes_quiz_index_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./quizzes/quiz_index_container */ "./frontend/components/quizzes/quiz_index_container.js");
-
 
 
 

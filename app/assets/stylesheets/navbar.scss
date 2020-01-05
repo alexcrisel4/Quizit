@@ -63,7 +63,71 @@ i {
     color: white;
 }
 
-.links-container{
-   display: flex; 
-   justify-content: flex-end;
+// .links-container{
+//    display: flex; 
+//    justify-content: flex-end;
+// }
+
+.login-signup {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  // justify-content: flex-end;
+  background-color: #461A42;
+  height: 72px; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.4);
 }
+
+.nav-links {
+  display: flex;
+  list-style-type: none;
+
+}
+
+// .links-container {
+//   justify-self: flex-end;
+// }
+
+.login-signup .nav-links .signup {
+ 
+  padding: 20px;
+
+}
+
+.login-signup .nav-links .login {
+  
+  padding: 10px;
+  
+  // opacity: 0.5;
+  height: 10px;
+  border-radius: 4px;
+  margin-top: 25px;
+  text-align: center;
+  // transition: all 0.2s ease-out;
+  background-color: rgba(0,0,0,0.2);
+ 
+}
+.login-signup .nav-links .login:hover {
+ -webkit-filter: brightness(70%);
+}
+
+.signup-link {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  font-family: 'QuickSand', 'OpenSans', sans-serif, Helvetica, Arial;
+  background: #00C985;
+  width: 108px;
+  border-radius: 4px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 44px;
+  font-size: 16px;
+  font-weight: 700;
+  padding-left: 20;
+  text-align: center;
+} 
