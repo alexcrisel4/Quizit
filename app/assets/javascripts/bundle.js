@@ -284,6 +284,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _quizzes_quiz_show_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./quizzes/quiz_show_container */ "./frontend/components/quizzes/quiz_show_container.js");
 /* harmony import */ var _quizzes_quiz_form_container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./quizzes/quiz_form_container */ "./frontend/components/quizzes/quiz_form_container.js");
 /* harmony import */ var _modal__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modal */ "./frontend/components/modal.jsx");
+/* harmony import */ var _splash__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./splash */ "./frontend/components/splash.jsx");
+
 
 
 
@@ -312,7 +314,11 @@ var App = function App(_ref) {
     exact: true,
     path: "/admin",
     component: _quizzes_quiz_index_container__WEBPACK_IMPORTED_MODULE_6__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["ProtectedRoute"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["AuthRoute"], {
+    exact: true,
+    path: "/",
+    component: _splash__WEBPACK_IMPORTED_MODULE_10__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["ProtectedRoute"], {
     path: "/admin/quiz/new",
     component: _quizzes_quiz_form_container__WEBPACK_IMPORTED_MODULE_8__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["ProtectedRoute"], {
@@ -630,7 +636,7 @@ var Navbar = function Navbar(_ref) {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
       className: "login-signup"
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-      src: "../../app/assets/images/quizit_logo.jpeg",
+      src: "../../app/assets/images/quizit_logo.png",
       alt: "logo"
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "links-container"
@@ -1716,6 +1722,44 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (SignupForm);
+
+/***/ }),
+
+/***/ "./frontend/components/splash.jsx":
+/*!****************************************!*\
+  !*** ./frontend/components/splash.jsx ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+ // import '../../app/assets/stylesheets/splash.scss'
+
+
+
+var Splash = function Splash(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "splash-container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "left-splash"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    className: "main-title"
+  }, "Motivate students with exciting quizzes!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Review, assess, and engage!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "signup-link",
+    to: "/signup"
+  }, "Get Started")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "right-splash"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "",
+    alt: ""
+  })));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Splash);
 
 /***/ }),
 
@@ -51932,7 +51976,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

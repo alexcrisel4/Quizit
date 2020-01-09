@@ -8,6 +8,7 @@ import QuizIndexContainer from './quizzes/quiz_index_container';
 import QuizShowContainer from './quizzes/quiz_show_container';
 import QuizFormContainer from './quizzes/quiz_form_container';
 import Modal from './modal';
+import Splash from './splash';
 import { Switch } from 'react-router-dom';
 
 const App = ({ loggedin }) => {
@@ -22,6 +23,8 @@ const App = ({ loggedin }) => {
     <AuthRoute path="/signup" component={SignupContainer} />
     <ProtectedRoute exact path="/admin" component={QuizIndexContainer}/>
     <Switch>
+      <AuthRoute exact path='/' component={Splash} />
+
       <ProtectedRoute  path="/admin/quiz/new" component={QuizFormContainer}/>
       <ProtectedRoute path="/admin/quiz/:quizId" component={QuizShowContainer}/>
     </Switch>
