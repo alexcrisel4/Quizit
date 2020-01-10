@@ -20,4 +20,13 @@
    display: flex;
    justify-content: center;
    align-items: center;
+   flex-direction: column;
+ }
+
+ footer {
+   color: white;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: right;
  }

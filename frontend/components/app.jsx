@@ -28,7 +28,11 @@ const App = ({ loggedin }) => {
       <ProtectedRoute  path="/admin/quiz/new" component={QuizFormContainer}/>
       <ProtectedRoute path="/admin/quiz/:quizId" component={QuizShowContainer}/>
     </Switch>
+    <footer>
+        © Alexander Crisel | 2019
+    </footer>
   </div>
+  
   )
 };
 

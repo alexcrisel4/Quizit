@@ -324,7 +324,7 @@ var App = function App(_ref) {
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["ProtectedRoute"], {
     path: "/admin/quiz/:quizId",
     component: _quizzes_quiz_show_container__WEBPACK_IMPORTED_MODULE_7__["default"]
-  })));
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", null, "\xA9 Alexander Crisel | 2019"));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
@@ -635,19 +635,19 @@ var Navbar = function Navbar(_ref) {
   } else {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
       className: "login-signup"
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      to: "/"
+    }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
       src: "../../app/assets/images/quizit_logo.png",
       alt: "logo"
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "links-container"
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
       className: "nav-links"
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
       className: "login"
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-      onClick: function onClick() {
-        return openModal('login');
-      },
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      to: "/login",
       className: "login-link"
     }, "Log in")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
       className: "signup"
@@ -1751,7 +1751,11 @@ var Splash = function Splash(props) {
   }, "Motivate students with exciting quizzes!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Review, assess, and engage!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     className: "signup-link",
     to: "/signup"
-  }, "Get Started")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "Get Started"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "splash-login"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Already using Quizit?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "/login"
+  }, "Log in"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "right-splash"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: "",

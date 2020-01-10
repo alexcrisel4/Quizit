@@ -12,6 +12,10 @@ const Splash = props => {
       </h1>
       <h2>Review, assess, and engage!</h2>
       <Link className="signup-link" to="/signup">Get Started</Link>
+      <div className="splash-login">
+          <div>Already using Quizit?</div>
+          <Link to="/login">Log in</Link>
+      </div>
       </div>
       <div className="right-splash">
       <img src="" alt=""/>

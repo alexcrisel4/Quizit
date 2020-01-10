@@ -19,3 +19,19 @@
    .splash-container h2 {
     margin-bottom: 30px;
    }
+
+   .splash-login {
+     margin-top: 20px;
+     display: flex;
+     flex-direction: row;
+   }
+
+   .splash-login a {
+     margin-left: 5px;
+      color: #efa929;
+      text-decoration: none;
+   }
+
+   .splash-login a:hover {
+    text-decoration: underline;
+   }

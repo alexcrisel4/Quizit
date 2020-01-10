@@ -22,10 +22,11 @@ const Navbar = ({ loggedin, openModal }) => {
   } else {
     return (
       <nav className="login-signup">
-        <img src="../../app/assets/images/quizit_logo.png" alt="logo"/>
+        <Link to="/"> <img src="../../app/assets/images/quizit_logo.png" alt="logo" /></Link>
         <div className="links-container">
         <ul className="nav-links">
-          <li className="login" ><button onClick={() => openModal('login')} className="login-link">Log in</button></li>
+            <li className="login" ><Link to="/login" className="login-link">Log in</Link></li>
+          {/* <li className="login" ><button onClick={() => openModal('login')} className="login-link">Log in</button></li> */}
           <li className="signup"><Link className="signup-link" to="/signup">Sign up</Link></li>
         </ul>
         </div>
