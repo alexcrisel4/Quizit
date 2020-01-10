@@ -3,10 +3,10 @@ json.quiz do
  
 end
 
-# json.questions do
-#   @quiz.questions.each do |question|
-#     json.set! question.id do
-#       json.partial! 'api/questions/question', question: question
-#     end
-#   end
-# end
+json.questions do
+  @quiz.questions.each do |question|
+    json.set! question.id do
+      json.partial! 'api/questions/show', question: question
+    end
+  end
+end
