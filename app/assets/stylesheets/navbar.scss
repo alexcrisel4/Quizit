@@ -40,12 +40,19 @@
   height: 30px;
   cursor: pointer;
   line-height: 30px;
-  font-family: OpenSans, sans-serif, Helvetica, Arial;
+  font-family: 'QuickSand', 'OpenSans', sans-serif, Helvetica, Arial;
   border: none;
   border-radius: 4px;
   text-decoration: none;
   padding: 5px 10px 5px 10px;
   
+}
+
+.logo-container {
+  width: 40px;
+  height: 20px;
+  background-image: image_url('ocupations/quizit_logo.png');
+  z-index: 10;
 }
 
 .login {

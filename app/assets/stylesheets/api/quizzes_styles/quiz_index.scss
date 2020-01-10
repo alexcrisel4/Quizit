@@ -33,6 +33,10 @@
   box-shadow: 0 3px 6px 1px rgba(0,0,0,0.1), 0 0 0 1px rgba(0,0,0,0.05);
 }
 
+.index-container ul li h3 {
+  margin-top: 10px;
+}
+
 .index-container ul li:hover {
   transform: scale(1.01);
     box-shadow: 0 0px 0px 1px rgba(0,0,0,0.05), -4px 6px 8px 4px rgba(0,0,0,0.05), 4px 6px 8px 4px rgba(0,0,0,0.05);

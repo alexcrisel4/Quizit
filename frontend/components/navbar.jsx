@@ -22,7 +22,8 @@ const Navbar = ({ loggedin, openModal }) => {
   } else {
     return (
       <nav className="login-signup">
-        <Link to="/"> <img src="../../app/assets/images/quizit_logo.png" alt="logo" /></Link>
+        {/* <img src="../images/quizit_logo.png" alt="logo" /> */}
+        <Link to="/"><div className="logo-container"></div></Link>
         <div className="links-container">
         <ul className="nav-links">
             <li className="login" ><Link to="/login" className="login-link">Log in</Link></li>

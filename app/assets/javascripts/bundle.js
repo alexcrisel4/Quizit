@@ -637,9 +637,8 @@ var Navbar = function Navbar(_ref) {
       className: "login-signup"
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
       to: "/"
-    }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-      src: "../../app/assets/images/quizit_logo.png",
-      alt: "logo"
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "logo-container"
     })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "links-container"
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
@@ -51980,7 +51979,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
