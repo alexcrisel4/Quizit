@@ -49,15 +49,12 @@
 }
 
 .logo-container {
-  width: 40px;
-  height: 20px;
+  width: 400px;
+  height: 200px;
   background-image: image_url('ocupations/quizit_logo.png');
   z-index: 10;
 }
 
-.login {
-  // align-self: center;
-}
 
 .login-link:hover {
   background-color: rgba(0,0,0,0.4);
@@ -71,10 +68,6 @@ i {
     color: white;
 }
 
-// .links-container{
-//    display: flex; 
-//    justify-content: flex-end;
-// }
 
 .login-signup {
   display: flex;
@@ -96,9 +89,6 @@ i {
 
 }
 
-// .links-container {
-//   justify-self: flex-end;
-// }
 
 .login-signup .nav-links .signup {
  
