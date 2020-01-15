@@ -1,4 +1,4 @@
-import * as APIUtil from '../util/questions_api_util';
+import * as APIUtil from '../util/question_api_util';
 
 export const RECEIVE_QUESTIONS = "RECEIVE_QUESTIONS";
 export const RECEIVE_QUESTION = "RECEIVE_QUESTION";
