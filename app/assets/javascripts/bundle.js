@@ -871,14 +871,16 @@ function (_React$Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "question-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        onSubmit: this.handleSubmit
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "question-body",
         type: "text",
         onChange: this.update("body")
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "submit",
-        onSubmit: this.handleSubmit
-      }));
+        value: "Add Question"
+      })));
     }
   }]);
 
@@ -996,7 +998,7 @@ function (_React$Component) {
       e.preventDefault;
       var quiz = Object.assign({}, this.state);
       this.props.createQuiz(quiz).then(function (quiz) {
-        _this3.props.history.push("/admin/quiz/".concat(quiz.payload.quiz.id));
+        _this3.props.history.push('/admin/questions/new');
       });
     }
   }, {

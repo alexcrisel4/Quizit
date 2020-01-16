@@ -24,7 +24,7 @@ class QuizForm extends React.Component {
     e.preventDefault;
     const quiz = Object.assign({}, this.state);
     this.props.createQuiz(quiz).then(quiz => {
-      this.props.history.push(`/admin/quiz/${quiz.payload.quiz.id}`)
+      this.props.history.push('/admin/questions/new')
     })
   }
 

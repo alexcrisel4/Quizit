@@ -17,6 +17,7 @@ class QuestionForm extends React.Component {
       })
     }
   }
+
   handleSubmit(e) {
     e.preventDefault;
     const question = Object.assign({}, this.state);
@@ -28,8 +29,10 @@ class QuestionForm extends React.Component {
   render () {
     return (
       <div className="question-container">
+        <form onSubmit={this.handleSubmit}>
           <input className="question-body" type="text" onChange={this.update("body")}/>
-          <input type="submit" onSubmit={this.handleSubmit}/>
+          <input type="submit" value="Add Question"/>
+        </form>
       </div>
     )
   }
