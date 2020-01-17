@@ -49,10 +49,17 @@
 }
 
 .logo-container {
-  width: 400px;
-  height: 200px;
-  background-image:url('../images/ocupations/quizit_logo.png');
-  z-index: 10;
+  font-family: 'Open Sans', sans-serif;
+  color: #555;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 40px;
+  font-weight: 800;
+  letter-spacing: -3px;
+  line-height: 1;
+  text-shadow: darkgray 1px 1px 0;
+  position: relative;
+ 
 }
 
 

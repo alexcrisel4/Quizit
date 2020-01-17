@@ -721,11 +721,10 @@ var Navbar = function Navbar(_ref) {
   } else {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
       className: "login-signup"
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-      className: "logo-container"
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      className: "logo-container",
       to: "/"
-    }, "link"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    }, "Quizit")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "links-container"
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
       className: "nav-links"
